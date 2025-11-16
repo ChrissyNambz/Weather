@@ -9,12 +9,12 @@ function App() {
         <p>Hello Everyone!!!</p>
 
         <a
-          className="App-link"
-          href="https://reactjs.org"
+          className="Git-link"
+          href="https://github.com/ChrissyNambz"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noreferrer"
         >
-          Learn React
+          My GitHub Repository
         </a>
       </header>
     </div>
