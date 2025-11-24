@@ -13,13 +13,13 @@ const[city, setCity]=useState(props.defaultCity)
     console.log(response.data);
     setweatherData({
       temperature: response.data.main.daily.temperature.current,
-      wind:response.data.wind.speed,
+      wind: response.data.wind.speed,
       city: response.data.name,
-      weatherIcon:"http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png",
-      country:response.data.main.country,
-      description:response.data.main.condition.description,
-      humidity:response.data.main.temperature.humidity,
-        });
+      weatherIcon: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}`,
+      country: response.data.main.country,
+      description: response.data.main.condition.description,
+      humidity: response.data.main.temperature.humidity,
+    });
     setTemperature();
     setReady(true);
   }
