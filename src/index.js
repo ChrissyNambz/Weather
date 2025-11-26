@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-//import { byPrefixAndName } from "@awesome.me/kit-KIT_CODE/icons";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
