@@ -1,12 +1,16 @@
 import React, {useState} from "react";
+import Current from "./Current";
 import axios from "axios";
 import Info from "./Info";
 
 import "./Weather.css";
 
-export default function Weather(props) {
+export default function Weather(props)
+ {
 const[weatherData,setweatherData]=useState({ready:false})
+
 const[city, setCity]=useState(props.defaultCity)
+
   function cityResponse(response) {
     console.log(response.data);
     setweatherData({
@@ -14,7 +18,7 @@ const[city, setCity]=useState(props.defaultCity)
       temperature: response.data.temperature.current,
       wind: response.data.wind.speed,
       city: response.data.city,
-      date: "Wednesday 06:00",
+      date: new Date (response.data.time *1000),
       weatherIcon: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}`,
       country: response.data.country,
       description: response.data.condition.description,

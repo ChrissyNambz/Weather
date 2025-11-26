@@ -5,7 +5,7 @@ export default function Info(props){
       <div className="Info">
         <h1>{props.data.city}</h1>
         <ul>
-          <li>{weatherData.date}</li>
+          <li><Current date={weatherData.date} /></li>
           <li className="text-capitalize">{props.data.description}</li>
         </ul>
 
