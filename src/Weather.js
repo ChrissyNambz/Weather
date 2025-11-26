@@ -1,8 +1,6 @@
 import React, {useState} from "react";
-import Current from "./Current";
 import axios from "axios";
 import Info from "./Info";
-
 import "./Weather.css";
 
 export default function Weather(props)
@@ -28,7 +26,7 @@ const[city, setCity]=useState(props.defaultCity)
 
   function search (){
      const apiKey = "t6468120b34dd22a5f93b7f863a2oc0a";
-     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${apiKey}&units=metric`;
+     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
      axios.get(apiUrl).then(cityResponse);
 
   }
@@ -37,7 +35,7 @@ const[city, setCity]=useState(props.defaultCity)
   function handleSubmit(event){
 
     event.preventDefault();
-    search()
+    search(city)
 
   }
 

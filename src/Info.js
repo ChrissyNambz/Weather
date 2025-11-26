@@ -1,4 +1,5 @@
-import React from "react"
+import React from "react";
+import Current from "./Current";
 
 export default function Info(props){
     return (
