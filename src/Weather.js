@@ -60,7 +60,7 @@ const[city, setCity]=useState(props.defaultCity)
              </div>
              <div className="col-3">
                <input
-                 typer="submit"
+                 type="submit"
                  value="Search"
                  className="btn btn-primary w-100"
                />

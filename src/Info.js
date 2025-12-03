@@ -1,4 +1,5 @@
 import React from "react";
+
 import Current from "./Current";
 
 export default function Info(props){
@@ -6,12 +7,14 @@ export default function Info(props){
       <div className="Info">
         <h1>{props.data.city}</h1>
         <ul>
-          <li><Current date={weatherData.date} /></li>
+          <li><Current date={props.data.date} /></li>
+
           <li className="text-capitalize">{props.data.description}</li>
         </ul>
 
         <div className="row mt-3">
           <div className="col-6">
+            
             <img
               src={props.data.weatherIcon}
               alt={props.data.description}
@@ -26,7 +29,7 @@ export default function Info(props){
             <ul>
               <li>Country: {props.data.country}</li>
               <li>Humidity:{props.data.humidity}</li>
-              <li> Wind: {props.data.Wind}</li>
+              <li> Wind: {props.data.wind}</li>
             </ul>
           </div>
         </div>
