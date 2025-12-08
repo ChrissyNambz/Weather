@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import axios from "axios";
 import Info from "./Info";
 import "./Weather.css";
+import Forecast from "./Forecast";
 
 export default function Weather(props)
  {
@@ -13,11 +14,11 @@ const[city, setCity]=useState(props.defaultCity)
     console.log(response.data);
     setweatherData({
       ready:true,
+      coordinates:response.data.coordinates,
       temperature: response.data.temperature.current,
       wind: response.data.wind.speed,
       city: response.data.city,
       date: new Date (response.data.time *1000),
-      weatherIcon: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}`,
       country: response.data.country,
       description: response.data.condition.description,
       humidity: response.data.temperature.humidity,
@@ -68,6 +69,7 @@ const[city, setCity]=useState(props.defaultCity)
            </div>
          </form>
          <Info data={weatherData} />
+         <Forecast coordinates={weatherData.coordinates}/>
        </div>
      );
 
